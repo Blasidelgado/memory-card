@@ -1,4 +1,4 @@
-import { PokemonIds, pokemonsToFetch } from "../utils/pokemon.enum";
+import { PokemonIds, pokemons as pokemonsToFetch} from "../utils/pokemon.enum";
 
 export interface PokemonCard {
     id: number,

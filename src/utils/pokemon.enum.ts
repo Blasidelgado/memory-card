@@ -11,7 +11,7 @@ export enum PokemonIds {
   "mewtwo" = 150,
 }
 
-export const pokemonsToFetch: PokemonIds[] = [
+export const pokemons: PokemonIds[] = [
   PokemonIds.bulbasaur,
   PokemonIds.charmander,
   PokemonIds.squirtle,
