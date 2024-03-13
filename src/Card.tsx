@@ -1,12 +1,17 @@
 import { PokemonCard } from "./services/api";
 
-export default function Card( {id, name, imageUrl}: PokemonCard) {
+interface CardProps {
+data: PokemonCard
+onClick: () => void
+}
+
+export default function Card( {data, onClick}: CardProps) {
     
     return (
-        <article>
-            <p>I am {name}</p>
-            <p>I have {id}</p>
-            <p>img: {imageUrl}</p>
+        <article onClick={onClick}>
+            <p>I am {data.name}</p>
+            <p>I have {data.id}</p>
+            <p>img: {data.imageUrl}</p>
         </article>
     )
 }

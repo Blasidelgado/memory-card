@@ -1,4 +1,4 @@
-import { PokemonIds, pokemonsToFetch } from "../assets/pokemon.enum";
+import { PokemonIds, pokemonsToFetch } from "../utils/pokemon.enum";
 
 export interface PokemonCard {
     id: number,
@@ -25,14 +25,14 @@ export class PokemonAPIService implements IPokemonAPIService{
     async fetchCards () {
         const pokemonCards: PokemonCard[] = [];
         for (const pokemon of this.pokemonsToFetch) {
-            const newPokemonData: PokemonCard = {} as PokemonCard;
+            const newPokemonCard = {} as PokemonCard;
             const response = await fetch(this.baseUrl + pokemon);
             const data = await response.json();
-            newPokemonData.id = data.id;
-            newPokemonData.name = data.name;
-            newPokemonData.imageUrl = data.sprites.front_default
-            pokemonCards.push(newPokemonData);
+            newPokemonCard.id = data.id;
+            newPokemonCard.name = data.name;
+            newPokemonCard.imageUrl = data.sprites.front_default
+            pokemonCards.push(newPokemonCard);
         }
-        return pokemonCards
+        return pokemonCards;
     }
 }
