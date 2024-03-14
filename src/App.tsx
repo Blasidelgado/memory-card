@@ -3,6 +3,7 @@ import Card from './Card';
 import { PokemonAPIService, PokemonCard } from './services/api';
 import shuffleArray from './services/shuffle';
 import { PokemonIds } from './utils/pokemon.enum';
+import Scoreboard from './Scoreboard';
 
 const App = () => {
   const [score, setScore] = useState<number>(0);
@@ -39,13 +40,14 @@ const App = () => {
   };
 
   return (
-    <div>
-      <div className="cards-container">
+    <main>
+      <Scoreboard score={score} maxScore={maxScore}  />
+      <section id='cards-container' className= 'flex flex-wrap'>
         {cards.map((card) => (
           <Card key={card.id} data={card} onClick={handleCardClick}/>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
