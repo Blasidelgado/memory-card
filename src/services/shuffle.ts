@@ -1,5 +1,3 @@
-import { PokemonCard } from "./api";
-
 /**
  * Fisher-Yates shuffle algorithm
  * @param array Unshuffled array
